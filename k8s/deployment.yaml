@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: demo-app
-        image: jgcha/demo-app:latest 
+        image: jgcha/demo-app:3207ec0bec8e14737ca83341e685cfbb7cc314e5
         ports:
         - containerPort: 80
