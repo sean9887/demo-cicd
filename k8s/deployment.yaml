@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: demo-app
-        image: sean9887/demo-app:latest  # 이 라인은 CI가 자동으로 수정
+        image: 
         ports:
         - containerPort: 80
