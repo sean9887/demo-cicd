@@ -15,12 +15,14 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
+    - name: Set image tag
+      run: echo "IMAGE=jgcha/demo-app:${{ github.sha }}" >> $GITHUB_ENV
+
     - name: Docker Login
       run: echo "${{ secrets.DOCKER_PASS }}" | docker login -u "${{ secrets.DOCKER_USER }}" --password-stdin
 
-    - name: Build and Push
+    - name: Build and Push Docker Image
       run: |
-        IMAGE=jgcha/demo-app:${{ github.sha }}
         docker build -t $IMAGE .
         docker push $IMAGE
 
