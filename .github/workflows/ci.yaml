@@ -17,7 +17,7 @@ jobs:
 
     - name: Build and Push
       run: |
-        IMAGE=sean9887/demo-app:${{ github.sha }}
+        IMAGE=jgcha/demo-app:${{ github.sha }}
         docker build -t $IMAGE .
         docker push $IMAGE
 
